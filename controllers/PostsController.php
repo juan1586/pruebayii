@@ -68,10 +68,12 @@ class PostsController extends Controller
     public function actionCreate()
     {
         $model = new posts();
+
+         
    
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success','Registro creado correctamente');
+            Yii::$app->session->setFlash('success','Registro creado con exito');
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
